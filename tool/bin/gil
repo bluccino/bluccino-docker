@@ -1,0 +1,11 @@
+#!/bin/bash
+# gil: git log with decorated log tree
+
+   if [ "$*" != "" ]; then
+      echo '   usage: gil    # git log with decorated log tree'
+      echo '   see also: gic, gik, gil, gip, gir, gis, tag'
+      exit 1
+   fi
+
+   echo 'git log --decorate --oneline --graph --all'
+   git log --decorate --oneline --graph --all

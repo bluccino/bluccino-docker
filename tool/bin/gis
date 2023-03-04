@@ -1,0 +1,17 @@
+#!/bin/bash
+# gis: git status (after git fetch)
+
+   if [ "$*" == "-?" ]; then
+      echo '   usage: gis    # git status (after git fetch)'
+      echo '          gis -s # show some details'
+      echo ''
+      echo '   see also: gic, gik, gil, gip, gir, gis, tag'
+      exit 1
+   fi
+
+   if [ "$*" == "-s" ]; then
+      git show && exit
+   fi
+
+   ec -y '=> git status'
+   git status

@@ -1,0 +1,12 @@
+#!/bin/bash
+# bash.rc: bash resource file for a docker bash launch
+
+  #echo "Hello, bash!"
+
+# enhance PATH
+
+   export PATH=$PATH:/opt/tool/bin
+
+ # setup prompt
+
+   export PS1="\[\e[36m\]\W\[\e[m\] ($) "
