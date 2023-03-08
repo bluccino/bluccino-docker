@@ -1,0 +1,29 @@
+#!/bin/bash
+# gitroot - echo root directory of git repository
+
+   if [ "$*" == "-?" ]; then
+       echo 'usage: gitroot  # echo root directory of git repository'
+       exit 0
+   fi
+
+   if [ "$*" != "" ]; then
+       gitroot -?
+       exit 1
+   fi
+
+#==============================================================================
+# - note:  `python3 $BIN/python/gitroot.py` does not work anymore
+#==============================================================================
+
+  if [ -d ".git" ]; then
+    echo `pwd`
+  else
+    if [ "`pwd`" == "/" ]; then
+      exit 1
+    else
+      cd ..
+      gitroot
+    fi
+  fi
+
+# eof
